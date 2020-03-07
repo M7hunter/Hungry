@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_2_red_1_white"
+    android:fillViewport="true"
+    tools:context=".ui.meals.MealsActivity">
+    <!-- scroll main layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="@dimen/restaurant_icon"
+            android:layout_height="@dimen/restaurant_icon"
+            android:layout_marginEnd="@dimen/m_large"
+            android:src="@drawable/ic_meal"
+            app:layout_constraintBottom_toBottomOf="@id/tv_restaurant_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_restaurant_title" />
+
+        <!-- restaurant title -->
+        <TextView
+            android:id="@+id/tv_restaurant_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/m_large"
+            android:fontFamily="serif"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/rv_meals"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Pizza" />
+
+        <!-- meals -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_meals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_restaurant_title"
+            app:layout_constraintVertical_weight="1"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_restaurant" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

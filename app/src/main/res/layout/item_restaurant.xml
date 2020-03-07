@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/m_2xSmall"
+    android:paddingTop="@dimen/m_2xSmall"
+    android:paddingEnd="@dimen/m_xSmall"
+    android:paddingBottom="@dimen/m_2xSmall"
+    tools:showIn="@layout/activity_restaurants">
+
+    <!-- bg -->
+    <FrameLayout
+        android:id="@+id/cv_item_restaurant_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/m_medium"
+        android:layout_marginEnd="@dimen/m_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/m_tiny"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/m_small" />
+    </FrameLayout>
+
+    <!-- title -->
+    <TextView
+        android:id="@+id/tv_item_restaurant_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/m_small"
+        android:layout_marginEnd="@dimen/m_small"
+        android:layout_marginBottom="@dimen/m_small"
+        android:fontFamily="serif"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_meals_count"
+        app:layout_constraintEnd_toStartOf="@id/fab_restaurant_arrow"
+        app:layout_constraintStart_toEndOf="@id/iv_item_restaurant_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Pizza" />
+
+    <!-- count -->
+    <TextView
+        android:id="@+id/tv_meals_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_item_restaurant_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_restaurant_title"
+        tools:text="@tools:sample/us_zipcodes" />
+
+    <!-- icon -->
+    <ImageView
+        android:id="@+id/iv_item_restaurant_icon"
+        android:layout_width="@dimen/restaurant_icon"
+        android:layout_height="@dimen/restaurant_icon"
+        android:layout_marginTop="@dimen/m_xSmall"
+        android:layout_marginBottom="@dimen/m_xSmall"
+        android:adjustViewBounds="true"
+        android:padding="@dimen/m_small"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cv_item_restaurant_bg"
+        app:layout_constraintStart_toStartOf="@id/cv_item_restaurant_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_restaurant_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/white"
+        android:src="@drawable/ic_arrow_right"
+        app:borderWidth="0dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/cv_item_restaurant_bg"
+        app:layout_constraintStart_toEndOf="@id/cv_item_restaurant_bg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

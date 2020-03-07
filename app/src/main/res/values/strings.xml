@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hungry</string>
+    <string name="items_count">%d items</string>
+    <string name="restaurant_menu">%s\nmenu</string>
+    <string name="phone">phone</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+</resources>

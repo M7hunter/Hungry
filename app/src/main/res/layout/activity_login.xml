@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_1_red_1_white"
+    android:fillViewport="true"
+    tools:context=".ui.login.LoginActivity">
+    <!-- scroll main layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/m_large"
+        android:paddingEnd="@dimen/m_large">
+
+        <!-- background icon -->
+        <ImageView
+            android:layout_width="@dimen/restaurant_icon"
+            android:layout_height="@dimen/restaurant_icon"
+            android:layout_marginTop="@dimen/m_large"
+            android:src="@drawable/ic_lock_restaurant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- phone container -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/m_small"
+            app:cardElevation="@dimen/m_small"
+            app:layout_constraintBottom_toTopOf="@id/cv_password"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
+            <!-- phone -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_phone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/m_small"
+                android:hint="@string/phone"
+                app:counterEnabled="true"
+                app:counterMaxLength="11"
+                app:errorEnabled="true">
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:padding="@dimen/m_2xSmall" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- password container -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/m_large"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/m_small"
+            app:cardElevation="@dimen/m_small"
+            app:layout_constraintBottom_toTopOf="@id/btn_login"
+            app:layout_constraintTop_toBottomOf="@id/cv_phone">
+            <!-- password -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/m_small"
+                android:hint="@string/password"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorPrimary">
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/m_2xSmall" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- login -->
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/m_large"
+            android:backgroundTint="@android:color/white"
+            android:paddingTop="@dimen/m_xSmall"
+            android:paddingBottom="@dimen/m_xSmall"
+            android:text="@string/login"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_password" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
